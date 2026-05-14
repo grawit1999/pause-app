@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #faf7f0;
+  --paper2: #f3ede0;
+  --surface: #ffffff;
+  --surface2: #f7f3ea;
+  --ink: #1a1a1a;
+  --ink-soft: #5a554c;
+  --ink-faint: #94897a;
+  --hairline: #e8e2d3;
+  --hairline-soft: #efebe1;
+  --brand: #1d4a3e;
+  --brand-soft: #d8e3dd;
+  --brand-tint: #ecf1ee;
+  --brand-deep: #143329;
+  --accent: #d4923a;
+  --accent-soft: #f6e6c8;
+  --accent-tint: #fbf3e2;
+  --good: #3d7a52;
+  --good-soft: #dde9df;
+  --warn: #b8842e;
+  --warn-soft: #f3e6c8;
+  --bad: #a8523f;
+  --bad-soft: #ecd6cf;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--paper2);
+  font-family: "IBM Plex Sans Thai", "IBM Plex Sans", system-ui, sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
+
+.animate-fade-in { animation: fadeIn 0.2s ease-out; }
+.animate-spin    { animation: spin 0.8s linear infinite; }
