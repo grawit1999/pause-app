@@ -29,7 +29,7 @@ function Logo() {
 
 function NavItem({ href, label, badge }: { href: string; label: string; badge?: number }) {
   const pathname = usePathname()
-  const active = pathname === href || pathname.startsWith(href + '/')
+  const active = pathname === href
   return (
     <Link href={href} style={{
       display: 'flex', alignItems: 'center', gap: 8,
